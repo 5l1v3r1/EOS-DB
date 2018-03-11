@@ -1,0 +1,83 @@
+{
+  "types": [{
+      "new_type_name": "account_name",
+      "type": "name"
+    }
+  ],
+  "structs": [
+    {
+      "name": "password",
+      "base": "",
+      "fields": {
+        "tag": "string",
+        "content": "string"
+      }
+    },
+    {
+      "name": "act_adduser",
+      "base": "",
+      "fields": {
+		"user_email": "string",
+		"user_uid": "string",
+		"phone": "string",
+		"password": "string",
+		"status": "string",
+		"rating": "string",
+        "owner":"account_name"
+      }
+    },
+	{
+      "name": "act_getuser",
+      "base": "",
+      "fields": {
+		"user_email": "string",
+        "owner":"account_name"
+      }
+    },
+	{
+      "name": "act_deluser",
+      "base": "",
+      "fields": {
+		"user_email": "string",
+		"result_operation": "string",
+        "owner":"account_name"
+      }
+    },
+	{
+      "name": "by_user",
+      "base": "",
+      "fields": {
+		"user_email": "string",
+		"user_uid": "string",
+		"phone": "string",
+		"password": "string",
+		"status": "string",
+		"rating": "string",
+        "owner":"account_name"
+      }
+    }
+  ],
+  "actions": [
+	{
+      "action_name": "adduser",
+      "type": "act_adduser"
+    },
+    {
+      "action_name": "getuser",
+      "type": "act_getuser"
+    },
+    {
+      "action_name": "deluser",
+      "type": "act_deluser"
+    }	
+  ],
+  "tables": [
+	{
+      "table_name": "sampledbusers",
+      "type": "by_user",
+      "index_type": "str",
+      "key_names" : ["user_email"],
+      "key_types" : ["string"]
+    }
+  ]
+}
