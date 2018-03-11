@@ -70,11 +70,6 @@ namespace sample_dbc {
     }
 }
 
-struct test_action {
-  eosio::string str1;
-  eosio::string str2;
-};
-
 extern "C" {
 
     void init()  {
@@ -89,13 +84,6 @@ extern "C" {
        }
 	   else if(action == N(getuser))
        {
-			auto msg = eosio::current_message<test_action>();
-			eosio::print("test_action content\n");
-			eosio::dump(msg);
-			 
-			bytes b = eosio::raw::pack(msg);
-			printhex(b.data, b.len);
-			print( b.data, "::", b.len );
 			sample_dbc::apply_get_user(eosio::current_message<sample_dbc::value_getuser_get>());
        }
 	   else if(action == N(deluser))
