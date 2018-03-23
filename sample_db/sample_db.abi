@@ -6,14 +6,6 @@
   ],
   "structs": [
     {
-      "name": "password",
-      "base": "",
-      "fields": {
-        "tag": "string",
-        "content": "string"
-      }
-    },
-    {
       "name": "act_adduser",
       "base": "",
       "fields": {
@@ -23,7 +15,7 @@
 		"password": "string",
 		"status": "string",
 		"rating": "string",
-        "owner":"account_name"
+        	"owner":"account_name"
       }
     },
 	{
@@ -31,7 +23,7 @@
       "base": "",
       "fields": {
 		"user_email": "string",
-        "owner":"account_name"
+        	"owner":"account_name"
       }
     },
 	{
@@ -40,7 +32,7 @@
       "fields": {
 		"user_email": "string",
 		"result_operation": "string",
-        "owner":"account_name"
+        	"owner":"account_name"
       }
     },
 	{
@@ -53,7 +45,7 @@
 		"password": "string",
 		"status": "string",
 		"rating": "string",
-        "owner":"account_name"
+        	"owner":"account_name"
       }
     }
   ],
