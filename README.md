@@ -1,6 +1,48 @@
 # EOS-DB
 Sample usage EOS as DataBase
 
+# HOW CREATE CONTRACT
+
+curl http://127.0.0.1:8888/v1/wallet/create -X POST -d '"testwallet"'
+->returned
+PW5KUCUtm9cVBXhGWMQGxvuKNWK7XYy
+
+curl http://127.0.0.1:8888/v1/wallet/unlock -X POST -d '["testwallet","PW5KUCUtm9cVBXhGWMQGxvuKNWK7XYy"]'
+
+./eosc create key
+->returned
+Private key: 5KQB5gfmiZZfnVZjyLGYfUehT
+Public key: EOS6NJfqnQKkw3QkissvUj9fo4
+
+./eosc wallet import -n testwallet 5KQB5gfmiZZfnVZjyLGYfUehT
+->returned
+imported private key for: EOS6NJfqnQKkw3QkissvUj9fo4
+
+./eosc create key
+->returned
+Private key: 5KQB5gfmiZZfnVZjyLGYfUe
+Public key: EOS6NJfqnQKkw3QkissvUj9f
+
+./eosc wallet import -n testwallet 5KQB5gfmiZZfnVZjyLGYfUe
+->returned
+imported private key for: EOS6NJfqnQKkw3QkissvUj9f
+
+open config.ini
+import faucet-private-key
+./eosc wallet import -n testwallet 5KQB5gfmiZZfnVZjynytnt
+->returned
+imported private key for: EOS6NJfqnQKkw3QkissvUj9f
+
+./eosc create account inita sampleacc EOS6NJfqnQKkw3QkissvUj9fo4 EOS6NJfqnQKkw3QkissvUj9f
+
+create WAST file
+cd /root/eos/build/tools
+./eoscpp -o /root/eos/contracts/sampleacc/test.wast /root/eos/contracts/test/test.cpp
+
+set contract
+cd /root/eos/build/programs/eosc/
+./eosc set contract sampleacc /root/eos/contracts/test/test.wast /root/eos/contracts/test/test.abi
+
 
 # DELETE USER
 
