@@ -1,4 +1,4 @@
-found data   NOT WORK
+found user   NOT WORK
 
 ./eosc push message sampleacc getuser '{"user_email":"email@email","owner":"inita"}' --scope inita --permission inita@active
 
