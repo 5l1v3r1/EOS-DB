@@ -5,20 +5,10 @@
 #include <sample_db.hpp>
 #include <sample_db.gen.hpp>
 namespace sample_dbc {
-    const static uint32_t MAX_STRING_LEN = 1024;
-    const static auto CODE_NAME = N(account_name);
+	const static uint32_t MAX_STRING_LEN = 1024;
+	const static auto CODE_NAME = N(account_name);
 	const static auto TABLE_USER = N(sampledbusers);
     
-
-    /*
-        char tmp[MAX_STRING_LEN];
-        int32_t load_len = load_str(get_param.owner, CODE_NAME, TABLE_NAME,
-                                    (char *)get_param.tag.get_data(), get_param.tag.get_size(),
-                                    tmp, MAX_STRING_LEN);
-		if(load_len != -1){
-			eosio::print( "DONT EXIST VALUE" "\n" );
-		}
-	*/
 	//IF SAVE OR UPDATE == 1 success
 	//IF FOUND == -1 not found
 	//ADD NEW USER
@@ -66,7 +56,6 @@ namespace sample_dbc {
 		}else if(load_len == 0){
 			eosio::print( "USER NOT FOUNDED" "\n" );
 		}
-		//result_operation = ""
     }
 }
 
