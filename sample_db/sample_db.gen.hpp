@@ -6,30 +6,30 @@
 
 namespace eosio { namespace raw {
 	
-	//SAVE USER DATA
-	template<typename Stream> inline void pack( Stream& s, const sample_dbc::value_users_get& value ) {
-      raw::pack(s, value.user_email);
-	  raw::pack(s, value.user_uid);
-	  raw::pack(s, value.phone);
-      raw::pack(s, value.password);
-	  raw::pack(s, value.status);
-      raw::pack(s, value.rating);
-	  raw::pack(s, value.owner);
+//SAVE USER DATA
+template<typename Stream> inline void pack( Stream& s, const sample_dbc::value_users_get& value ) {
+		raw::pack(s, value.user_email);
+		raw::pack(s, value.user_uid);
+		raw::pack(s, value.phone);
+		raw::pack(s, value.password);
+		raw::pack(s, value.status);
+		raw::pack(s, value.rating);
+		raw::pack(s, value.owner);
     }
     template<typename Stream> inline void unpack( Stream& s, sample_dbc::value_users_get& value ) {
-      raw::unpack(s, value.user_email);
-	  raw::unpack(s, value.user_uid);
-	  raw::unpack(s, value.phone);
-      raw::unpack(s, value.password);
-	  raw::unpack(s, value.status);
-      raw::unpack(s, value.rating);
-	  raw::unpack(s, value.owner);
+		raw::unpack(s, value.user_email);
+		raw::unpack(s, value.user_uid);
+		raw::unpack(s, value.phone);
+		raw::unpack(s, value.password);
+		raw::unpack(s, value.status);
+		raw::unpack(s, value.rating);
+		raw::unpack(s, value.owner);
     }
 	
-	//GET USER DATA
-	template<typename Stream> inline void pack( Stream& s, const sample_dbc::value_getuser_get& value ) {
-      raw::pack(s, value.user_email);
-	  raw::pack(s, value.owner);
+//GET USER DATA
+    template<typename Stream> inline void pack( Stream& s, const sample_dbc::value_getuser_get& value ) {
+	raw::pack(s, value.user_email);
+	raw::pack(s, value.owner);
     }
     template<typename Stream> inline void unpack( Stream& s, sample_dbc::value_getuser_get& value ) {
       raw::unpack(s, value.user_email);
