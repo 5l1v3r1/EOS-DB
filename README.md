@@ -1,4 +1,5 @@
-# EOS-DB
+# EOS-DB BRANCH x2  
+       /* LAST SUPPORT DAWN-2018-02-14 */
 Sample usage EOS as DataBase
 
 # HOW CREARE ABI
