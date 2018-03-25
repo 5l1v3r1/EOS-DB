@@ -1,6 +1,71 @@
 # EOS-DB
 Sample usage EOS as DataBase
 
+# HOW CREARE ABI
+cd /root/eos/build/tools
+./eoscpp -g /root/eos/contracts/test/test.abi /root/eos/contracts/test/test.hpp
+
+IF YOU SEE EMPTY ABI LIKE
+
+    "types": [],
+    "structs":[],
+    "actions":[],
+    "tables":[]
+  
+  CHECK YOUR CPP file
+  
+## HOW ADD TABLE ACTION 
+
+add description for ABI generator
+
+    @abi action "actions_name"
+    @abi table_name
+    
+    /* @abi action insertrecord
+     * @abi table
+    */
+    struct tablename {
+       uint128_t key1;
+       uint128_t key2;
+    };
+
+it created ABI with structure
+    
+    {
+      "types": [],
+      "structs": [
+      {
+          "name": "tablename",
+          "base": "",
+          "fields": {
+            "key1": "uint128",
+            "key2": "uint128"
+          }
+        }
+      ],
+      "actions": [
+      {
+          "action_name": "insertrecord",
+          "type": "tablename"
+        }
+      ],
+      "tables": [
+      {
+          "table_name": "tablename",
+          "index_type": "i128i128",
+          "key_names": [
+            "key1",
+            "key2"
+          ],
+          "key_types": [
+            "uint128",
+            "uint128"
+          ],
+          "type": "tablename"
+        }
+      ]
+    }
+
 # HOW CREATE CONTRACT
 
 curl http://127.0.0.1:8888/v1/wallet/create -X POST -d '"testwallet"'
