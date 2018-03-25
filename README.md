@@ -71,7 +71,8 @@ it created ABI with structure
 
 curl http://127.0.0.1:8888/v1/wallet/create -X POST -d '"testwallet"'
 ->returned
-PW5KUCUtm9cVBXhGWMQGxvuKNWK7XYy
+
+       PW5KUCUtm9cVBXhGWMQGxvuKNWK7XYy
 
 curl http://127.0.0.1:8888/v1/wallet/unlock -X POST -d '["testwallet","PW5KUCUtm9cVBXhGWMQGxvuKNWK7XYy"]'
 
@@ -79,29 +80,27 @@ curl http://127.0.0.1:8888/v1/wallet/unlock -X POST -d '["testwallet","PW5KUCUtm
 
 ->returned
 
-Private key: 5KQB5gfmiZZfnVZjyLGYfUehT
-
-Public key: EOS6NJfqnQKkw3QkissvUj9fo4
+       Private key: 5KQB5gfmiZZfnVZjyLGYfUehT
+       Public key: EOS6NJfqnQKkw3QkissvUj9fo4
 
 ./eosc wallet import -n testwallet 5KQB5gfmiZZfnVZjyLGYfUehT
 
 ->returned
 
-imported private key for: EOS6NJfqnQKkw3QkissvUj9fo4
+       imported private key for: EOS6NJfqnQKkw3QkissvUj9fo4
 
 ./eosc create key
 
 ->returned
 
-Private key: 5KQB5gfmiZZfnVZjyLGYfUe
-
-Public key: EOS6NJfqnQKkw3QkissvUj9f
+       Private key: 5KQB5gfmiZZfnVZjyLGYfUe
+       Public key: EOS6NJfqnQKkw3QkissvUj9f
 
 ./eosc wallet import -n testwallet 5KQB5gfmiZZfnVZjyLGYfUe
 
 ->returned
 
-imported private key for: EOS6NJfqnQKkw3QkissvUj9f
+       imported private key for: EOS6NJfqnQKkw3QkissvUj9f
 
 open config.ini
 
@@ -111,7 +110,7 @@ import faucet-private-key
 
 ->returned
 
-imported private key for: EOS6NJfqnQKkw3QkissvUj9f
+       imported private key for: EOS6NJfqnQKkw3QkissvUj9f
 
 ./eosc create account inita sampleacc EOS6NJfqnQKkw3QkissvUj9fo4 EOS6NJfqnQKkw3QkissvUj9f
 
